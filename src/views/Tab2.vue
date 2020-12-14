@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import { camera, trash, close } from "ionicons/icons";
+import { usePhotoGallery } from "@/composables/usePhotoGallery";
 import {
   IonPage,
   IonHeader,
@@ -48,13 +49,16 @@ export default {
     IonToolbar,
     IonTitle,
     IonContent
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonImg
+    // IonGrid,
+    // IonRow,
+    // IonCol,
+    // IonImg
   },
   setup() {
+    const { takePhoto } = usePhotoGallery();
+
     return {
+      takePhoto,
       camera,
       trash,
       close
